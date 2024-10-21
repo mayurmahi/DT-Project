@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+  
+h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease-in-out;
+}
+  
+/* Aligning buttons in a column and making button sizes uniform */
+.button-container {
+    display: flex;
+    flex-direction: column;  /* Column-wise alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    background-color: white;
+    color: #2575fc;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1.2s ease-in-out;
+    width: 250px;  /* Same width for all buttons */
+}
+
+.button-container button:hover {
+    background-color: #2575fc;
+    color: white;
+    transform: scale(1.05);
+}
+
+.signup-link {
+    display: flex;
+    flex-direction: column;  /* Align signup buttons in column too */
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-link button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: white;
+    color: #6a11cb;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    animation: fadeInUp 1.4s ease-in-out;
+    width: 250px;  /* Same width for signup buttons */
+}
+  
+.signup-link button:hover {
+    background-color: #6a11cb;
+    color: white;
+    transform: scale(1.05);
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    color: black;
+    width: 400px;
+    animation: slideIn 0.8s ease-out;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    margin-top: 15px;
+}
+
+.back-link a {
+    color: #2575fc;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Additional CSS for new input fields and bot button */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+}
+
+/* New Bot button style */
+.bot-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#backer-bot-btn {
+    padding: 10px 20px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#backer-bot-btn:hover {
+    background-color: #6a11cb;
+    transform: scale(1.05);
+}
+
+/* New Container Style */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for centering */
+  }
+  
+  /* Style for Form Container (Card) */
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for card */
+    padding: 30px;
+    border-radius: 15px;
+    color: black;
+    width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Positioning Bot Button to the Right */
+  .bot-container {
+    position: absolute;
+    right: 30px; /* Adjust to your liking */
+    top: 30px; /* Adjust to your liking */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  /* Ensure form inputs look uniform */
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+
+.animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

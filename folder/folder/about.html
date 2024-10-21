@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdChain - About Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.connect-wallet {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.create-campaign {
+    background-color: #008CBA;
+    color: white;
+}
+
+.nav-buttons button:hover {
+    opacity: 0.9;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 0.5rem;
+}
+
+/* About page styles */
+.container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.container p:first-of-type {
+    font-weight: bold;
+    color: #4a4a4a;
+    font-size: 1.2rem;
+    border-left: 4px solid #ffd700;
+    padding-left: 1rem;
+}
+
+.container p:last-of-type {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links, .nav-buttons {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links, .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a, .nav-buttons button {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.active, .nav-buttons.active {
+        display: flex;
+    }
+
+    .container {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container p {
+        font-size: 1rem;
+    }
+}
+   </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">DreamFund</a>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="discover.html">Discover</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="connect-wallet">
+                    <i class="fas fa-wallet"></i> Connect Wallet
+                </button>
+                <button class="create-campaign" onclick="window.location.href='create-campaign.html'">
+                    <i class="fas fa-plus"></i> Create Campaign
+                </button>
+                <button class="create-campaign" onclick="window.location.href='chatbot.html'">
+                    <i class="fas fa-plus"></i> chatbot
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>About DreamFund</h1>
+        <p>We are on a mission to revolutionize crowdfunding using blockchain technology to ensure transparency and accountability.</p>
+        <p>Founded in 2024, DreamFund has enabled numerous projects to secure funding and build a better future.</p>
+    </div>
+</body>
+<script>
+    function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const navButtons = document.querySelector('.nav-buttons');
+    navLinks.classList.toggle('active');
+    navButtons.classList.toggle('active');
+}
+</script>
+<script src="app.js"></script>
+</html>

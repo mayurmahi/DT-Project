@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Campaign</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.connect-wallet {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.create-campaign {
+    background-color: #008CBA;
+    color: white;
+}
+
+.nav-buttons button:hover {
+    opacity: 0.9;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Create Campaign Form styles */
+#createCampaignForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #008CBA;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background-color: #ffd700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.cta-btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-links, .nav-buttons {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links, .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a, .nav-buttons button {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links.active, .nav-buttons.active {
+        display: flex;
+    }
+
+    .container {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">CrowdChain</a>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="discover.html">Discover</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="about.html">About</a>
+              
+            </div>
+            <div class="nav-buttons">
+                <button class="connect-wallet">
+                    <i class="fas fa-wallet"></i> Connect Wallet
+                </button>
+                <button class="create-campaign" onclick="window.location.href='create-campaign.html'">
+                    <i class="fas fa-plus"></i> Create Campaign
+                </button>
+                <button class="create-campaign" onclick="window.location.href='chatbot.html'">
+                    <i class="fas fa-plus"></i> chatbot
+                </button>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Create a New Campaign</h1>
+        <form id="createCampaignForm" onsubmit="submitCampaign(event)">
+            <label for="campaignTitle">Campaign Title:</label>
+            <input type="text" id="campaignTitle" placeholder="Enter campaign title" required>
+
+            <label for="campaignDescription">Campaign Description:</label>
+            <textarea id="campaignDescription" placeholder="Describe your campaign" required></textarea>
+
+            <label for="requiredAmount">Required Amount (ETH):</label>
+            <input type="number" id="requiredAmount" placeholder="Enter required amount" required>
+
+            <label for="campaignImage">Upload Campaign Image:</label>
+            <input type="file" id="campaignImage" accept="image/*" required>
+
+            <button type="submit" class="cta-btn">Submit Campaign</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

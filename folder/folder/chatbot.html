@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .chat-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient(to right, #ffffff, #f3e6f5)
+           
+
+        }
+        .chat-header {
+            background-color: #008CBA;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-message {
+            max-width: 70%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 18px;
+            background-color: #f1f0f0;
+            align-self: flex-start;
+        }
+        .user-message {
+            background-color: #DCF8C6;
+            align-self: flex-end;
+        }
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .chat-input button:hover {
+            background-color: #45a049;
+        }
+        .chat-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        .chat-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .chat-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .chat-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            DreamFund Chatbot
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Chat messages will go here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBody = document.getElementById('chat-body');
+
+        // Predefined questions and answers
+        const qaPairs = {
+            "What is crowdfunding?": "Crowdfunding is a way to raise money from a large number of people, usually via an online platform, to support a project or business.",
+            "How do I create a campaign?": "To create a campaign, click the 'Create Campaign' button and fill in the required details such as title, description, amount, and image.",
+            "What is the minimum amount I can raise?": "There is no minimum amount. You can raise as much or as little as you want, depending on your campaign goals.",
+            "How do I contribute to a campaign?": "To contribute to a campaign, go to the 'Discover Campaigns' section, choose a campaign, and click 'Contribute' to donate.",
+            "How are the funds transferred?": "Funds are transferred to the campaign owner once the campaign reaches its goal. All transactions are secure.",
+            "Can I edit my campaign?": "Yes, you can edit your campaign details after submitting it by going to the 'My Campaigns' section."
+        };
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            if (userInput.trim()) {
+                // Display user message
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user-message');
+                userMessage.textContent = userInput;
+                chatBody.appendChild(userMessage);
+
+                // Clear input field
+                document.getElementById('userInput').value = '';
+
+                // Scroll to the bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                // Check if the input matches any predefined questions
+                const botResponse = qaPairs[userInput.trim()] || "I'm sorry, I don't have the answer to that question.";
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.classList.add('chat-message');
+                    botMessage.textContent = botResponse;
+                    chatBody.appendChild(botMessage);
+
+                    // Scroll to the bottom after response
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
